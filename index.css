@@ -128,7 +128,9 @@
 #stickman {
   position: absolute;
   bottom: 18%;
-  left: 20px;
+  left: 15px;
+  width: 15vw;
+  height: 20vw;
 }
 
 #content {
@@ -153,16 +155,21 @@
   animation-iteration-count: infinite;
   background-image: url(img/plate.png);
   background-size: 100% 100%;
-  padding: 30px;
+  padding: calc(2vh + 2vw);
   width: 60%;
+  min-height: 8vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 #title {
   font-weight: bold;
+  font-size: calc(2vh + 1vw);
 }
 
 #subtitle {
-  font-size: 1rem;
+  font-size: calc(1.5vh + 1vw);
 }
 
 #title,
@@ -171,8 +178,8 @@
   width: 100%;
   color: #CD993C;
   position: relative;
-  text-align: center;
   text-shadow: 0 1px 0 #CDAF77;
+  text-align: center;
 }
 
 #start {
