@@ -1,16 +1,25 @@
-### Hi there 👋
+<h3 align="center">Delve Delos Santos Jr.</h3>
+<h4 align="center">Web Developer</h4>
+<br>
+<p align="center">
+  <a target="_blank" href="https://replit.com/@dlvdls18">Replit</a>
+  &nbsp;
+  &sdot;
+  &nbsp;
+  <a target="_blank" href="https://bitbucket.org/dlvdls18">Bitbucket</a>
+  &nbsp;
+  &sdot;
+  &nbsp;
+  <a target="_blank" href="mailto:dlvdls18@gmail.com">Email</a>
+</p>
+<p align="center"><a target="_blank" href="https://bit.ly/dlvdls18">My Personal Portfolio &gt;</a><p>
 
-<!--
-**dlvdls18/dlvdls18** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<h1 align="center">
+  <img width="300" alt="Status" src="https://github-stats-alpha.vercel.app/api?username=dlvdls18">
+  <img width="300" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs?username=dlvdls18">
+  <img width="300" alt="Streaks" src="https://github-readme-streak-stats.herokuapp.com/?user=dlvdls18">
+</h1>
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center">
+  <img width="150" src="https://forthebadge.com/images/featured/featured-built-with-love.svg">
+</p>
