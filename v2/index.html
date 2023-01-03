@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dlvdls</title>
+  <meta name="description" content="Hey there folk! I am Delve Delos Santos Jr, I am a web developer with a small experience of developing.">
+  <meta name="author" content="Delve Delos Santos Jr.">
+  <meta name="keywords" content="dlvdls18, delve, dlvdls, dlvdls2">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"> -->
+</head>
+<style>
+  * {
+    font-family: "Ubuntu", Sans-Serif !important;
+  }
+  body {
+    background-color: #92008B;
+    transition: background-color 8s ease-in-out;
+  }
+  @media screen and (min-width: 600px) {
+    h3 {
+      font-size: 3rem;
+    }
+    h5 {
+      font-size: 2rem;
+    }
+    p, a, span, button {
+      font-size: 1.5rem;
+    }
+    p, button {
+      margin-top: 20px;
+      margin: 20px;
+    }
+    button {
+      border: 2px solid white !important;
+      padding-left: 80px !important;
+      padding-right: 80px !important;
+    }
+  }
+  [data-observe] {
+    transition: opacity 0.2s ease-in-out;
+  }
+  [data-observe]:not(.intersecting) {
+    opacity: 0;
+  }
+  .intersecting {
+    opacity: 1;
+  }
+  [data-map] {
+    height: 127px;
+  }
+  main {
+    filter: blur(5px);
+  }
+  #loader {
+    text-align: center;
+    color: white;
+    font-family: Arial !important;
+    font-weight: bold;
+    margin-top: 50px;
+    position: fixed;
+    width: 100%;
+  }
+  button {
+    transition: all 0.2s ease-out !important;
+  }
+</style>
+<script>
+  var loads = 0;
+  var version = "v1.0";
+  window.maint = false;
+</script>
+<body>
+<noscript>Please enable the JavaScript to continue using the website.</noscript>
+<p id="loader">Loading website...</p>
+<main data-page="main" data-active="" onload="loads++">
+  <!-- NAVBAR -->
+  <div class="d-flex justify-content-center container" data-page="navbar" data-active="">
+    <div class="shadow-sm top-0 start-0 d-flex position-fixed justify-content-between z-index-999 rounded m-2" backdrop-filter="blur(2px)">
+      <p class="fw-bold m-3">
+        <a class="text-light text-decoration-none" data-navigate="about" href="#">dlvdls</a>
+        <span color="#C7FF8F" class="margin-left--3px">&period;</span>
+        <span color="rgba(255,255,255,0.8)">/<span id="sectionName">about</span></span>
+      </p>
+    </div>
+  </div>
+  <br><br><br>
+  <!-- ABOUT -->
+  <section data-page="about" data-active="">
+    <h3 class="text-center m-3 mt-4 text-light" data-observe="" data-observe-with-top="">Delve Delos Santos Jr.</h3>
+    <h5 class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">Web Developer</h5>
+    <br>
+    <div class="d-flex justify-content-center">
+      <p class="m-3" color="rgba(255,255,255,0.7)" data-observe="">Hey there folk! I am Delve Delos Santos Jr,<br>I am a web developer with a small experience of developing.<br>I started coding behind 2020 when I was 12,<br> and launched my Github account behind 2021.</p>
+    </div>
+    <br><br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" data-navigate="skills" data-observe="">My skills</button>
+    </div>
+    <br><br>
+    <p class="fw-bold text-center text-light" data-observe="">Check out my socials!</p>
+    <div class="d-flex justify-content-center margin-left--20px">
+      <ul class="m-3 list-style-type-none">
+        <li data-observe=""><a href="https://github.com/dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">github.com/dlvdls18</a></li>
+        <li data-observe=""><a href="https://replit.com/@dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">replit.com/@dlvdls18</a></li>
+        <li data-observe=""><a href="https://bitbucket.org/dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">bitbucket.org/dlvdls18</a></li>
+        <li data-observe=""><a href="mailto:dlvdls18@gmail.com" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">mailto:dlvdls18@gmail.com</a></li>
+      </ul>
+    </div>
+    <br><br><br><br>
+    <h4 class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">My recommended repositories just for you.</h4>
+    <br>
+    <p class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">Style your website only using classes and attributes.</p>
+    <p class="text-center m-3"><a href="https://github.com/dlvdls18/Dsign2" class="hover:color-white cursor-pointer" color="rgba(255,255,255,0.8)" data-observe="">View in github</a></p>
+    <div class="card mb-3 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18/Dsign2"><img src="https://github-readme-stats.vercel.app/api/pin?username=dlvdls18&repo=Dsign2" alt="Dsign2" width="100%"></a>
+      </div>
+    </div>
+    <br><hr>
+    <p class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">Convert HTML Element to JSON.</p>
+    <p class="text-center m-3"><a href="https://github.com/dlvdls18/DocJect" class="hover:color-white cursor-pointer" color="rgba(255,255,255,0.8)" data-observe="">View in github</a></p>
+    <div class="card mb-3 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18/DocJect"><img src="https://github-readme-stats.vercel.app/api/pin?username=dlvdls18&repo=DocJect" alt="DocJect" width="100%"></a>
+      </div>
+    </div>
+    <br><hr>
+    <p class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">Add pages to your single page application.</p>
+    <p class="text-center m-3"><a href="https://github.com/dlvdls18/Dage" class="hover:color-white cursor-pointer" color="rgba(255,255,255,0.8)" data-observe="">View in github</a></p>
+    <div class="card mb-3 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18/Dage"><img src="https://github-readme-stats.vercel.app/api/pin?username=dlvdls18&repo=Dage" alt="Dage" width="100%"></a>
+      </div>
+    </div>
+    <br><hr>
+    <p class="text-center m-3" color="rgba(255,255,255,0.8)" data-observe="">Execute a promise infinitely until the request is success or the limit is exceeding.</p>
+    <p class="text-center m-3"><a href="https://github.com/dlvdls18/Definitely" class="hover:color-white cursor-pointer" color="rgba(255,255,255,0.8)" data-observe="">View in github</a></p>
+    <div class="card background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18/Definitely"><img src="https://github-readme-stats.vercel.app/api/pin?username=dlvdls18&repo=Definitely" alt="Definitely" width="100%"></a>
+      </div>
+    </div>
+    <br><br><br>
+    <hr>
+    <h3 class="text-center text-light" data-observe="">Want to talk with others?</h3>
+    <p class="text-center" color="rgba(255,255,255,0.8)" data-observe="">Please be nice to others.</p>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" data-navigate="talk" data-observe="">View conversation</button>
+    </div>
+    <br><br><br>
+    <hr>
+    <h3 class="text-center text-light" data-observe="">My blog</h3>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" data-navigate="blog" data-observe="">View my blogs</button>
+    </div>
+    <br><br><br><br>
+  </section>
+  <!-- SKILLS -->
+  <section data-page="skills">
+    <h3 class="text-center m-3 mt-4 text-light" data-observe="" data-observe-with-top="">My skills</h3>
+    <p class="text-center" color="rgba(255,255,255,0.8)" data-observe="">Here is my latest skills.</p>
+    <br>
+    <h5 class="text-center" color="rgba(255,255,255,0.8)" data-observe="">Github</h5>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18"><img src="https://github-stats-alpha.vercel.app/api?username=dlvdls18&bc=transparent" alt="Status" width="100%"></a>
+      </div>
+    </div>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body" data-observe="">
+        <a href="https://github.com/dlvdls18"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=dlvdls18" alt="Languages" width="100%"></a>
+      </div>
+    </div>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1 container" data-observe="">
+      <div class="card-body">
+        <a href="https://github.com/dlvdls18"><img src="https://github-readme-streak-stats.herokuapp.com?user=dlvdls18&hide_border=true" alt="Streak" width="100%"></a>
+      </div>
+    </div>
+    <br>
+    <h5 class="text-center" color="rgba(255,255,255,0.8)" data-observe="">Languages & Frameworks</h5>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1" data-observe="">
+      <div class="card-body">
+        <p class="text-center" color="rgba(255,255,255,0.8)">Mostly used</p>
+        <div class="d-flex justify-content-center">
+          <img src="https://skills.thijs.gg/icons?i=js,html,css,python&theme=light" alt="Mostly used">
+        </div>
+      </div>
+    </div>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1" data-observe="">
+      <div class="card-body">
+        <p class="text-center" color="rgba(255,255,255,0.8)">Known</p>
+        <div class="d-flex justify-content-center">
+          <img src="https://skills.thijs.gg/icons?i=mysql,java,php,vue&theme=light" alt="Known">
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+          <img src="https://skills.thijs.gg/icons?i=jquery,md,lua&theme=light" alt="Known">
+        </div>
+      </div>
+    </div>
+    <div class="card my-2 background-color-transparent border-color-transparent z-index-1" data-observe="">
+      <div class="card-body">
+        <p class="text-center" color="rgba(255,255,255,0.8)">Still learning</p>
+        <div class="d-flex justify-content-center">
+          <img src="https://skills.thijs.gg/icons?i=go,svelte,react,cs,bash&theme=light" alt="Still learning">
+        </div>
+      </div>
+    </div>
+    <br><br><br><br>
+  </section>
+  <!-- TALK -->
+  <section data-page="talk">
+    <h3 class="text-center m-3 mt-4 text-light" data-observe="" data-observe-with-top="">Talk</h3>
+    <p class="text-center" color="rgba(255,255,255,0.8)" data-observe="">Remember, be nice to others.</p>
+    <br>
+    <p class="text-center text-light mx-2" data-observe="">Before having conversations with others, please read the <u>Privacy Policy</u>.</p>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" data-navigate="privacy" data-observe="">View privacy policy</button>
+    </div>
+    <br><br>
+    <hr class="border-color-white">
+    <br><br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" onclick="refreshTalk()" data-observe="">Refresh conversation</button>
+    </div>
+    <br><br>
+    <p id="no-talk" class="text-center text-light display-none mx-3" data-observe=""></p>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" onclick="refreshTalk(true)" data-observe="" id="view-talk">View talk</button>
+    </div>
+    <ul id="talk-list" class="list-group m-3"></ul>
+    <br><br>
+    <h5 class="text-light text-center" data-observe="">Message</h5>
+    <div class="card background-color-transparent border-none">
+      <div class="card-body">
+        <input type="text" placeholder="Your name" class="background-color-white border-none rounded color-black p-2 container outline-none" id="msgName" data-observe="">
+        <br><br>
+        <textarea placeholder="Your message" class="background-color-white border-none rounded color-black p-2 container outline-none resize-none" rows="10" id="msgText" data-observe=""></textarea>
+        <br><br>
+        <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" onclick="sendMessage()" data-observe="">Send</button>
+        <br>
+        <div class="d-flex justify-content-center align-items-center" data-observe="">
+          <input type="checkbox" id="msgPrivate" class="uk-checkbox mx-2">
+          <p class="text-light">Send to admin only</p>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <br><br><br><br>
+  </section>
+  <!-- ADMINISTRATION -->
+  <section data-page="administration">
+    <h3 class="text-center text-light">Administration</h3>
+    <br><br><br>
+    <!-- Maintenance -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Maintenance</p>
+    <p class="text-light text-center">While in maintenance, talk and other sections that uses database publicly will be disabled</p>
+    <br>
+    <p class="text-center" color="#FF9F94" id="maint-status"></p>
+    <div class="d-flex justify-content-evenly">
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="enterMaintenance()">Enter maintenance mode</button>
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="exitMaintenance()">Exit maintenance mode</button>
+    </div>
+    <br><br>
+    <!-- Administration Instance -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Administration Instance</p>
+    <p class="text-center text-light">For automatic administration login</p>
+    <br>
+    <div class="d-flex justify-content-evenly">
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="saveInstance()">Save instance</button>
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="deleteInstance()">Delete instance</button>
+    </div>
+    <br><br>
+    <!-- Version -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Version</p>
+    <p class="text-light text-center">The version label is displayed below the footer</p>
+    <p class="text-center text-light">You may need to refresh your browser to see the changes</p>
+    <br>
+    <input type="text" placeholder="Version (v1.0 by default)" id="inputVersion" class="background-color-white border-none rounded color-black p-2 outline-none m-2">
+    <button border="1px solid white" class="m-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="updateVersion()">Update version</button>
+    <br><br>
+    <!-- BlogWriter -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Blog</p>
+    <p class="text-center text-light">To delete a blog, go to the blog section</p>
+    <br>
+    <input type="text" placeholder="Title" id="inputBlogTitle" class="background-color-white border-none rounded color-black p-2 outline-none m-2">
+    <textarea placeholder="Content" class="background-color-white border-none rounded color-black p-2 m-2 outline-none resize-none" rows="10" id="inputBlogContent"></textarea>
+    <button border="1px solid white" class="m-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="publishBlog()">Publish blog</button>
+    <br><br>
+    <!-- Location -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Location</p>
+    <p class="text-center text-light">View and delete saved location data</p>
+    <br>
+    <div class="d-flex justify-content-evenly">
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="localStorage.removeItem('deviceIPData')">Delete data</button>
+      <button border="1px solid white" class="mx-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="alert(localStorage.getItem('deviceIPData') || 'No data')">View data</button>
+    </div>
+    <br><br>
+    <!-- Analytics -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Analytics</p>
+    <br>
+    <p class="text-center text-light" id="analytics-count"></p>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="m-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="refreshAnalytics()">Refresh analytics</button>
+    </div>
+    <br><br>
+    <!-- Crashlytics -->
+    <hr class="border-color-white">
+    <p class="text-center text-light fw-bold">Crashlytics</p>
+    <p class="text-center text-light">Error reports</p>
+    <br>
+    <ul id="crashlytics-list" class="list-group m-3 text-center text-light"></ul>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="m-2 background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black" transition="all 0.1s ease-out" onclick="refreshCrashlytics()">Refresh crashlytics</button>
+    </div>
+    <br><br><br><br>
+  </section>
+  <!-- BLOG -->
+  <section data-page="blog">
+    <h3 class="text-center text-light" data-observe="">Blog</h3>
+    <br><br>
+    <div class="d-flex justify-content-center">
+      <button border="1px solid white" class="background-color-transparent color-white border-radius-30px p-2 px-4 hover:background-color-white cursor-pointeh hover:color-black"transition="all 0.1s ease-out" onclick="refreshBlog()" data-observe="">Refresh blog</button>
+    </div>
+    <br>
+    <p class="text-center text-light m-2" id="no-blog"></p>
+    <ul id="blog-list" class="list-group m-3"></ul>
+  </section>
+  <!-- PRIVACY POLICY -->
+  <section data-page="privacy">
+    <h3 class="text-center text-light fw-bold">Privacy Policy</h3>
+    <p class="text-center text-light">Effective at Oct 12, 2022 (v1.5)</p>
+    <br>
+    <div class="m-3 text-light">
+      <p class="text-light text-center">Private informations</p>
+      <p class="fw-bold">Shared private information data</p>
+      <p>Your IP is visible to the admin and being used to analytics for automatic register.</p>
+      <p>All informations are Public IP, Longitude, Latitude, City, Country, Postal code, Timezone are now unexposed however, it is still kept in the server.</p>
+      <br>
+      <p class="fw-bold">Disagreement</p>
+      <p>If you disagree with this statement, you may delete your sent both public and private messages.</p>
+      <p>You cannot command to stop information being shared after sending a message.</p>
+      <br>
+      <p class="fw-bold">Information Application</p>
+      <p>Anyone who enters my website is automatically tracked.</p>
+      <p>The tracked devices are applied to count how many devices enters my website.</p>
+      <p>Google analytics, analytics, crashlytics, banning system, and talk uses the same application method.</p>
+      <br>
+      <p class="fw-bold">Review</p>
+      <p><u>Google analytics</u> review are written in their service.</p>
+      <p><u>Analytics</u> review (custom),</p>
+      <p>My analytics will not track you, this only collects your IP.</p>
+      <p>To count devices honestly.</p>
+      <p>No other activities, just collecting your <i>public</i> IP.</p>
+      <p><u>Crashlytics</u> review (custom),</p>
+      <p>This only collects your IP and device build.</p>
+      <p>When the website having some error, that error will automatically sent to crashlytics including your IP and your device build.</p>
+      <p><u>Talk</u> system review,</p>
+      <p>This collects your IP, location, and more.</p>
+      <p>No application is handled.</p>
+      <p>No other activities, just stores and kept it untouched.</p>
+      <p>Why? because some of peoples who message are using fake names. This can cause impersonation. To verify the real person, I need to collect user's private data.</p>
+      <br>
+      <p class="text-light text-center">Banning system</p>
+      <p class="fw-bold">Duration</p>
+      <p>Once you've banned, then you are banned forever unless the admin unban you</p>
+      <br>
+      <p class="fw-bold">Reason</p>
+      <p>If you are banned, you've break a conversation regulation or in personal reason.</p>
+      <br>
+      <p class="fw-bold">Regulation</p>
+      <p>1. Hate speech is <u>strictly</u> not allowed</p>
+      <p>2. Bypassing Anti-XSS is not allowed</p>
+      <p>3. Spamming is not allowed</p>
+    </div>
+    <br><br><br><br>
+  </section>
+  <!-- FOOTER -->
+  <div class="d-flex justify-content-center" data-page="footer" data-active="">
+    <section class="bg-dark p-3 container m-3 rounded">
+      <p class="fw-bold text-center">
+        <a class="text-light text-decoration-none" data-navigate="about" href="#">dlvdls</a>
+        <span color="#C7FF8F" class="margin-left--3px">&period;</span>
+      </p>
+      <p class="text-light">Sections</p>
+      <ul class="margin--15px my-2 list-style-type-none">
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="about">About</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="skills">Skills</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="talk">Talk</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="blog">Blog</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="privacy">Privacy Policy</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" onclick="askPass()">Admin access</a></li>
+        <li><a href="#" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)" data-navigate="administration">Administration</a></li>
+      </ul>
+      <br>
+      <p class="text-light">Socials</p>
+      <ul class="margin--15px my-2 list-style-type-none">
+        <li><a href="https://github.com/dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">Github</a></li>
+        <li><a href="https://replit.com/@dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">Replit</a></li>
+        <li><a href="https://bitbucket.org/dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">Bitbucket</a></li> 
+        <li><a href="https://github.com/dlvdls18" class="text-decoration-none hover:color-white cursor-pointer" color="rgba(255,255,255,0.7)">Email</a></li>
+      </ul>
+      <p class="text-center text-light m-2" id="version">Loading version</p>
+    </section>
+  </div>
+  <button class="fw-bold background-color-transparent border border-light border-1 rounded p-2 px-3 color-white position-fixed bottom-18px right-18px z-index-999 hover:background-color-white hover:color-black" transition="all 0.2s ease-out" data-page="backToTop" data-active="" onclick="backToTop()" id="btnTop" backdrop-filter="blur(3px)" background-color="rgba(255,255,255,0.2)">Top</button>
+</main>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" onload="loads++"></script>
+<!-- <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" onload="loads++"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/dlvdls18/Dsign2@main/src/dsign2.js" onload="loads++"></script>
+<script src="https://cdn.jsdelivr.net/gh/dlvdls18/Dage@main/src/dage.js" onload="loads++"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-app.js" onload="loads++"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-analytics.js" onload="loads++"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-database.js" onload="loads++"></script>
+<script onload="loads++">
+  firebase.initializeApp({
+    apiKey: "AIzaSyDFSeGrIx8Pai3iEB4j5I6uythNpYl6rTA",
+    authDomain: "dlvdls18-talk.firebaseapp.com",
+    projectId: "dlvdls18-talk",
+    storageBucket: "dlvdls18-talk.appspot.com",
+    messagingSenderId: "982294563250",
+    appId: "1:982294563250:web:7fc413a3869aa48a07fcab",
+    measurementId: "G-T4MM4F4VFC"
+  });
+  firebase.analytics();
+  window.db = firebase.database();
+  window.onerror = function(error, file, line) {
+    crashlyticsReport(devicePublicIP, error, line);
+    alert("An error occured, error reported.");
+    console.log(error, file, line);
+  }
+  async function __definePublicIP(ip) {
+    window.devicePublicIP = localStorage.getItem("ip") || ip.ip;
+    if(localStorage.getItem("ip") == null) localStorage.setItem("ip", ip.ip);
+    if(localStorage.getItem("deviceIPData") == null) $.ajax(`https://geo.ipify.org/api/v2/country,city?apiKey=at_L6FHtw0uaM1FIqjmU8TYWpat8fUHy&ipAddress=${ip.ip}`, "GET").done(function(data) {
+      localStorage.setItem("deviceIPData", JSON.stringify(data));
+      window.deviceIPData = data;
+    });
+    else window.deviceIPData = JSON.parse(localStorage.getItem("deviceIPData"));
+    var analyticsRef = await db.ref("analytics").get();
+    var analytics = analyticsRef.val() || [];
+    if(!analytics.includes(devicePublicIP)) analytics.push(devicePublicIP);
+    db.ref("analytics").set(analytics);
+  }
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=__definePublicIP" onload="loads++"></script>
+<script onload="loads++">
+  var isPassOk = localStorage.getItem("adminInstance") == "true" || false;
+  // Maintenance and version fetch
+  function initVars() {
+    db.ref("version").get().then(function(snap) {
+      window.version = snap.val() || "v1.0";
+      $("#version").text(version);
+    }).catch(function() {
+      window.version = "v1.0";
+    });
+    db.ref("isMaintenance").get().then(function(snap) {
+      window.maint = snap.val() || false;
+    }).catch(function() {
+      window.maint = false;
+    });
+  }
+  // Section name change
+  Dage.setAfterChange(function(name) {
+    Dage.show("main");
+    Dage.show("navbar");
+    Dage.show("footer");
+    Dage.show("backToTop");
+    sectionName.innerText = name;
+    backToTop();
+  });
+  // Administration load
+  Dage.on("administration", async function() {
+    if(!isPassOk) {
+      alert("Access denied");
+      setTimeout(function() {
+        Dage.navigate("about")
+      }, 100);
+      return;
+    }
+    var db = firebase.database();
+    var maintRef = await db.ref("/isMaintenance").get();
+    $("#maint-status").text(maintRef.val() == true ? "Website in maintenance" : "");
+    $("#inputVersion").val(version);
+    refreshAnalytics();
+    refreshCrashlytics();
+  });
+  // List refresh
+  Dage.on("talk", refreshTalk);
+  Dage.on("blog", refreshBlog);
+  // Background transition
+  var backgrounds = ["#92008B", "#326400", "#9B3700", "#005E85", "#008457", "#A8354B", "#8E7500", "#440096", "#FF007D", "#006164", "#454545", "#866C4B"];
+  var bgstate = 0;
+  setInterval(function() {
+    bgstate++;
+    if(bgstate > backgrounds.length - 1) bgstate = 0;
+    var bg = backgrounds[bgstate];
+    document.body.style.backgroundColor = bg;
+  }, 10000);
+  // Intersection
+  var inters = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      entry.target.classList.toggle("intersecting", entry.isIntersecting);
+      if(entry.target.hasAttribute("data-observe-with-top")) {
+        if(entry.isIntersecting) $("#btnTop").fadeOut();
+        else $("#btnTop").fadeIn();
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+  document.querySelectorAll("[data-observe]").forEach(function(el) {
+    inters.observe(el);
+  });
+  function backToTop() {
+    $("html, body").animate({ scrollTop: 0 }, 5);
+  }
+  // Talk
+  async function refreshTalk(viewTalk) {
+    viewTalk = viewTalk || false;
+    if(maint && !viewTalk) {
+      $("#no-talk").show();
+      $("#talk-list").hide();
+      $("#no-talk").text("We're sorry for inconvenience, this website is under maintenance. You cannot view the conversation until the maintenance is over.");
+      $("#view-talk").show();
+      return;
+    }
+    $("#talk-list").hide();
+    $("#no-talk").text("Loading conversation");
+    $("#no-talk").show();
+    $("#view-talk").hide();
+    var db = firebase.database();
+    var talksRef = await db.ref("/talk").get();
+    var talks = talksRef.val() || [];
+    if(talks.length > 0) {
+      $("#no-talk").hide();
+      $("#talk-list").show();
+    }
+    $("#no-talk").text("No conversation found, write a message by filling up the form below!");
+    var banRef = await db.ref("/ban").get();
+    var ban = banRef.val() || [];
+    var html = "";
+    talks.reverse().forEach(function(talk) {
+      if(talk.isPrivate == true) {
+        if(talk.publicIP == devicePublicIP) {}
+        else if(isPassOk) {}
+        else return;
+      }
+      var isBanned = ban.includes(talk.publicIP);
+      html += `<li class="list-group-item background-color-transparent border-none">`;
+      html += `<p class=" text-center text-light fw-bold user-select-none">${talk.name} ${talk.isAdmin ? `<span class="badge bg-primary text-light">Admin</span>` : ""} ${talk.isPrivate ? `<span class="badge bg-success text-light">Private</span>` : ""}</p>`; // name
+      html += `<p class="user-select-none text-center text-light"> ${isBanned ? `<p class="text-light"><span class="badge bg-warning text-light">Banned</span> This message cannot be shown becuase the author of this message is banned.</p>` : talk.msg.replaceAll("\n", "<br>")}</p>`; // message
+      html += `<p class="text-center" color="rgba(255,255,255,0.8)">Sent at ${new Date(talk.date).toLocaleString().split(",")[0]}</p>`; // date
+      if(isPassOk || talk.publicIP == devicePublicIP) html += `<button onclick="deleteMessage('${talk.id}')" class="background-color-transparent border border-1 border-light rounded p-1 px-3 text-light" transition="all 0.2s ease-in-out">Delete</button>`; // delete
+      if(isPassOk) html += `<button onclick="setBanIP('${talk.publicIP}', ${!isBanned})" class="ms-2 background-color-transparent border border-1 border-light rounded p-1 px-3 text-light" transition="all 0.2s ease-in-out">${isBanned ? "Unban" : "Ban"} IP</button>`; // ban
+      if(isPassOk) html += `<p class="text-light text-center">${talk.publicIP || "No IP Address"}</p>`; // ip
+      /*if(talk.ipLocation != null) {
+        // map
+        html += `<div data-map="${talk.id}" data-lat="${talk.ipLocation.location.lat}" data-lng="${talk.ipLocation.location.lng}"></div>`;
+      }*/
+      html += `<br><hr class="border-color-white"><br></li>`;
+    });
+    $("#talk-list").html(html);
+    /*window.maps = window.maps || {};
+    document.querySelectorAll("#talk-list > li > div[data-map]").forEach(function(el) {
+      if(window.maps[$(el).attr("data-map")] != null) return;
+      window.maps[$(el).attr("data-map")] = {
+        target: el,
+        map: L.map(el).setView([parseFloat($(el).attr("data-lat")), parseFloat($(el).attr("data-lng"))], 13)
+      }
+      window.maps[$(el).attr("data-map")].tile = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: `&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>`
+      }).addTo(window.maps[$(el).attr("data-map")].map);
+      if(!isPassOk) el.style.opacity = "0 !important";
+    });*/
+  }
+  async function sendMessage() {
+    if(maint) {
+      alert("We're sorry for inconvenience, this website is under maintenance. You cannot send a message until the maintenance is over.");
+      return;
+    }
+    var db = firebase.database();
+    var msg = $("#msgText").val().replaceAll("<", "&lt;").toString().replaceAll(">", "&gt;");
+    var name = $("#msgName").val().replaceAll("<", "&lt;").toString().replaceAll(">", "&gt;");
+    if(msg.length < 3 || name.length < 3 || msg.length > 999 || name.length > 15) return;
+    var banRef = await db.ref("/ban").get();
+    var ban = banRef.val() || [];
+    if(ban.includes(devicePublicIP)) {
+      alert("Sorry but you are banned from messaging.");
+      return;
+    }
+    $("#msgText").val("");
+    $("#msgName").val("");
+    var talksRef = await db.ref("/talk").get();
+    var talks = talksRef.val() || [];
+    talks.push({
+      name,
+      msg,
+      date: Date.now(),
+      id: Math.random().toString().repeat(Math.random() * 6).split("").shuffle().join("").replaceAll(".", Math.random() * 101),
+      isAdmin: isPassOk,
+      publicIP: devicePublicIP,
+      ipLocation: deviceIPData,
+      isPrivate: $("#msgPrivate")[0].checked
+    });
+    await db.ref("/talk").set(talks);
+    refreshTalk();
+    backToTop();
+  }
+  Array.prototype.shuffle = function() {
+    return this.sort(function() {
+      return Math.random() - 0.5;
+    });
+  }
+  async function deleteMessage(id) {
+    var db = firebase.database();
+    var talksRef = await db.ref("/talk").get();
+    var talks = talksRef.val() || [];
+    var newTalks = [];
+    talks.forEach(function(talk) {
+      if(talk.id != id) newTalks.push(talk);
+    });
+    db.ref("/talk").set(newTalks);
+    refreshTalk();
+  }
+  var isBlocked = false;
+  function askPass() {
+    if(isBlocked) {
+      alert("Access denied");
+      return;
+    }
+    if(isPassOk) {
+      var conf = confirm("Access already granted. do you want to revoke the access?");
+      if(conf == true) {
+        isPassOk = false;
+        refreshTalk();
+      }
+      return;
+    }
+    var pass = prompt("Password:");
+    if(pass == null) return;
+    if(pass == "12182008") {
+      isPassOk = true;
+      alert("Access granted");
+      if($("#sectionName").text() == "talk") refreshTalk();
+    } else isBlocked = true;
+  }
+  function enterMaintenance() {
+    var db = firebase.database();
+    db.ref("/isMaintenance").set(true);
+    window.maint = true;
+    Dage.navigate("administration");
+  }
+  function exitMaintenance() {
+    var db = firebase.database();
+    db.ref("/isMaintenance").set(false);
+    window.maint = false;
+    Dage.navigate("administration");
+  }
+  function saveInstance() {
+    localStorage.setItem("adminInstance", "true");
+  }
+  function deleteInstance() {
+    localStorage.removeItem("adminInstance");
+  }
+  function updateVersion() {
+    var db = firebase.database();
+    db.ref("/version").set($("#inputVersion").val());
+  }
+  // Blog
+  async function refreshBlog() {
+    $("#blog-list").hide();
+    $("#no-blog").text("Loading blogs");
+    $("#no-blog").show();
+    if(maint) {
+      $("#no-blog").text("We're sorry for inconvenience, this website is under maintenance. You cannot view my blogs until the maintenance is over.");
+      return;
+    }
+    var db = firebase.database();
+    var blogsRef = await db.ref("/blog").get();
+    var blogs = blogsRef.val() || [];
+    if(blogs.length > 0) {
+      $("#no-blog").hide();
+      $("#blog-list").show();
+    }
+    $("#no-blog").text("No published blog");
+    var html = "";
+    blogs.reverse().forEach(function(blog) {
+      html += `<li class="list-group-item background-color-transparent border-none">`;
+      html += `<p class=" text-center text-light fw-bold">${blog.title}</p>`; // title
+      html += `<p class=" text-center text-light">${blog.content.replaceAll("\n", "<br>")}</p>`; // content
+      html += `<p class="text-center" color="rgba(255,255,255,0.8)">Published at ${new Date(blog.date).toLocaleString().split(",")[0]}</p>`; // date
+      if(isPassOk) html += `<button onclick="deleteBlog('${blog.id}')" class="background-color-transparent border border-1 border-light rounded p-1 px-3 text-light" transition="all 0.2s ease-in-out">Delete</button>`; // delete
+      html += `<br><hr class="border-color-white"><br></li>`;
+    });
+    $("#blog-list").html(html);
+  }
+  async function deleteBlog(id) {
+    var db = firebase.database();
+    var blogsRef = await db.ref("/blog").get();
+    var blogs = blogsRef.val() || [];
+    var newBlogs = [];
+    blogs.forEach(function(blog) {
+      if(blog.id != id) newBlogs.push(blog);
+    });
+    db.ref("/blog").set(newBlogs);
+    refreshBlog();
+  }
+  async function publishBlog() {
+    var db = firebase.database();
+    var title = $("#inputBlogTitle").val();
+    var content = $("#inputBlogContent").val();
+    if(content.length < 3 || title.length < 3 || content.length > 999) return;
+    $("#inputBlogTitle").val("");
+    $("#inputBlogContent").val("");
+    var blogsRef = await db.ref("/blog").get();
+    var blogs = blogsRef.val() || [];
+    blogs.push({
+      title,
+      content,
+      date: Date.now(),
+      id: Math.random().toString().repeat(Math.random() * 6).split("").shuffle().join("").replaceAll(".", Math.random() * 101),
+    });
+    db.ref("/blog").set(blogs);
+    Dage.navigate("blog");
+    backToTop();
+  }
+  async function setBanIP(ip, bool) {
+    var banRef = await db.ref("/ban").get();
+    var ban = banRef.val() || [];
+    if(bool == true) ban.push(ip);
+    else ban = ban.filter(function(item) {
+      return item != ip;
+    });
+    db.ref("/ban").set(ban);
+    refreshTalk();
+  }
+  async function crashlyticsReport(ip, error, line) {
+    var reportRef = await db.ref("/report").get();
+    var report = reportRef.val() || [];
+    report.push({
+      ip,
+      error,
+      line,
+      date: Date.now()
+    });
+    db.ref("/report").set(report);
+  }
+  async function refreshAnalytics() {
+    $("#analytics-count").text("Loading...");
+    var analyticsRef = await db.ref("/analytics").get();
+    var analytics = (analyticsRef.val() || []).length;
+    $("#analytics-count").text(`${analytics} devices overall`);
+  }
+  async function refreshCrashlytics() {
+    $("#crashlytics-list").text("Loading...");
+    var reportsRef = await db.ref("/report").get();
+    var reports = reportsRef.val() || [];
+    if(reports.length < 1) $("#crashlytics-list").text("No report");
+    else {
+      var html = "";
+      var count = 0;
+      reports.forEach(function(rep) {
+        html += `<li class="list-group-item background-color-transparent border-none">`;
+        html += `<p>${rep.error}</p>`; // error
+        html += `<p>At line ${rep.line}</p>`; // line
+        html += `<p>Reported at ${new Date(rep.date).toLocaleString().split(",")[0]}</p>`; // date
+        html += `<p>${rep.ip}</p>`; // ip
+        html += `<p onclick="deleteReport(${count})"><u>Delete</u></p>`; // delete
+        html += `<br><hr class="border-color-white"><br></li>`;
+        count++;
+      });
+      $("#crashlytics-list").html(html);
+    }
+  }
+  async function deleteReport(index) {
+    var reportsRef = await db.ref("/report").get();
+    var reports = reportsRef.val() || [];
+    var newReports = [];
+    var count = 0;
+    reports.forEach(function(item) {
+      if(count != index) newReports.push(item);
+      count++;
+    });
+    db.ref("/report").set(newReports);
+    refreshCrashlytics();
+  }
+</script>
+<script>
+  // Website loader
+  window.isLoaded = false;
+  document.body.onload = function() {
+    var interv = setInterval(function() {
+      if(loads >= 7) {
+        document.querySelector("main").style.filter = "none";
+        loader.remove();
+        clearInterval(interv);
+        window.isLoaded = true;
+        setTimeout(initVars, 100);
+      }
+    });
+    // fallback
+    setTimeout(function() {
+      if(!window.isLoaded) {
+        document.querySelector("main").style.filter = "none";
+        loader.remove();
+        clearInterval(interv);
+        window.isLoaded = true;
+        setTimeout(initVars, 100);
+      }
+    }, 8000);
+  }
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4858086023776967" crossorigin="anonymous"></script>
+</html>
