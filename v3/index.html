@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dlvdls18</title>
+  <meta name="description" content="Delve Delos Santos Jr.">
+  <meta name="keywords" content="dlvdls18, dlvdls, dlvdls2, Delve Delos Santos Jr.">
+  <meta name="canonical" content="https://dlvdls18.github.io/dlvdls18">
+  <meta name="og:title" content="dlvdls18">
+  <meta name="og:description" content="Delve Delos Santos Jr.">
+  <meta name="og:image" content="image.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="res/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="res/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="res/favicon-16x16.png">
+  <link rel="manifest" href="res/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<style>
+  * {
+    font-family: "Rubik", Sans-Serif;
+    user-select: none;
+  }
+  body {
+    background: rgb(30, 30, 30);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #inner {
+    margin: calc(1vw + 1vh);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .hover {
+    color: rgb(180, 180, 180);
+    text-transform: uppercase;
+    font-size: calc(3vw + 2vh);
+    letter-spacing: 1.5vw;
+    margin: 8px;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  #hover-first {
+    color: white;
+  }
+  .tip {
+    background-color: rgb(200, 200, 200);
+    padding: calc(1.5vw + 1.5vh);
+    margin: 8px;
+    border-radius: calc(0.2vw + 0.2vh);
+    display: none;
+    font-size: calc(1.5vw + 1.5vh);
+    width: 75vw;
+  }
+  #link {
+    color: black;
+    position: relative;
+    text-decoration: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: rgb(180, 180, 180);
+  }
+  #link::after {
+    content: attr(data-content);
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    overflow: hidden;
+    height: 60%;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: rgba(200, 200, 200);
+  }
+  #indicators {
+    text-align: center;
+    pointer-events: none;
+    z-index: 999;
+  }
+  #indicators > span {
+    color: rgb(180, 180, 180);
+    font-size: calc(8vw + 8vh);
+    pointer-events: none;
+  }
+  #indicators > span:first-child {
+    color: white;
+  }
+  #image-center {
+    display: flex;
+    justify-content: center;
+  }
+  #image-container {
+    background-color: white;
+    padding: calc(1vw + 1vh);
+    padding-bottom: calc(2vw + 4vh);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: calc(13vw + 13vh);
+  }
+  #image {
+    width: calc(13vw + 13vh);
+    height: calc(13vw + 13vh);
+    object-fit: cover;
+  }
+</style>
+<body>
+  <div id="inner">
+    <div>
+      <br><br><br>
+      <div id="image-center">
+        <div id="image-container">
+          <img id="image" src="https://dlvdls18.github.io/dlvdls18/res/image.png">
+        </div>
+      </div>
+      <br>
+      <h1 id="hover-first" class="hover" data-index="0">Delve</h1>
+      <div id="tip-first" class="tip" data-index="0">
+        Hello, I'm Delve. <span style="color:gray" class="fixed-size">they/them</span>
+      </div>
+      <h1 id="hover-second" class="hover" data-index="1">Delos Santos</h1>
+      <div id="tip-second" class="tip" data-index="2">
+        A Web Developer.
+      </div>
+      <h1 id="hover-third" class="hover" data-index="2">Jr.</h1>
+      <div id="tip-third" class="tip" data-index="2">
+        Check out my <a href="https://github.com/dlvdls18" id="link" data-content="Github" class="fixed-size">Github</a> Account.
+      </div>
+      <p id="indicators">
+        <span id="indicator-first">&sdot;</span>
+        <span id="indicator-second">&sdot;</span>
+        <span id="indicator-third">&sdot;</span>
+      </p>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>
+  var items = ["first", "second", "third"];
+  // Tips.
+  var state = 0;
+  var last_state = -1;
+  var auto_state = setInterval(function() {
+    state = state + 1 > 2 ? 0 : state + 1;
+    update();
+  }, 10000);
+  $(".hover").click(function(evt) {
+    state = $(evt.target).attr("data-index");
+    clearInterval(auto_state);
+    update();
+  });
+  function update() {
+    if(state == last_state) return;
+    var item = items[state];
+    $(".hover").css("color", "rgb(180, 180, 180)");
+    $("#indicators > span").css("color", "rgb(180, 180, 180)");
+    $(`#hover-${item}, #indicator-${item}`).css("color", "white");
+    $(".tip").slideUp();
+    $(`#tip-${item}`).slideDown();
+    last_state = state;
+  }
+  update();
+  // Links.
+  var link = 0;
+  var links = [[
+    "Github", "https://github.com/dlvdls18"
+  ], [
+    "Replit", "https://replit.com/@dlvdls18"
+  ], [
+    "Bitbucket", "https://bitbucket.org/dlvdls18"
+  ]];
+  setInterval(function() {
+    link++;
+    if(link > 2) link = 0;
+    $("#link").text(links[link][0]);
+    $("#link").attr("data-content", links[link][0]);
+    $("#link").attr("href", links[link][1]);
+  }, 5000);
+  // Image.
+  var image = 0;
+  var images = [
+    "https://dlvdls18.github.io/dlvdls18/res/image.png",
+    "https://media.tenor.com/WBpQwNDNbUYAAAAi/susamogus.gif"
+  ];
+  setInterval(function() {
+    image++;
+    if(image == images.length) image = 0;
+    $("#image").animate({
+      opacity: 0
+    }, 1000, function() {
+      $("#image").get(0).src = images[image];
+    });
+  }, 25000);
+  $("#image").on("load", function() {
+    $("#image").animate({
+      opacity: 1
+    }, 1000);
+  });
+</script>
+</html>
