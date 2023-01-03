@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://media.tenor.com/WBpQwNDNbUYAAAAi/susamogus.gif" alt="">
+</p>
+
 <h3 align="center">Delve Delos Santos Jr.</h3>
 <h4 align="center">Web Developer</h4>
 <br>
