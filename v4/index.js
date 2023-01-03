@@ -7,15 +7,15 @@ var age = now.getFullYear() - 2008;
 if(now.getMonth() < 11 || now.getDate() < 18) age--;
 var contents = [
   ["Delve Delos Santos Jr.", "Web Developer"],
-  [age + " years old", "My Age"],
+  [age + " years old", "My Age (automatically updated)"],
   ["Philippines, Laguna", "My Location"],
-  ["JavaScript, PHP, Java, Python", "Programming Languages I know"],
+  ["JavaScript, PHP, Java, Python", "Programming Languages"],
   ["github.com/dlvdls18", "My GitHub Account"],
   ["replit.com/@dlvdls18", "My Replit Account"],
   ["dlvdls18@gmail.com", "Email me at"],
   ["Focused at studying", "I'm busy right now"],
-  ["You drew stars around my scars but now I'm bleeding", "Taylor Swift"],
-  ["Yes that stickman never stop walking", ""]
+  ["Midnights become my afternoons", "Taylor Swift"],
+  ["That stickman never stop walking", "Last message"]
 ];
 
 var elStart = document.getElementById("start");
