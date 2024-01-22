@@ -1,7 +1,4 @@
 <br>
-<h2 align="center">
-  <a href="https://bit.ly/creuser" target="_blank">creuser</a>
-</h2>
 <p align="center">
   <img width="300" alt="Status" src="https://github-stats-alpha.vercel.app/api?username=dlvdls18">
 </p>
