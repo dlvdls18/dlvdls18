@@ -12,5 +12,3 @@
 <p align="center">
   <img width="300" alt="Streaks" src="https://github-readme-streak-stats.herokuapp.com/?user=dlvdls18">
 </p>
-
-<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
