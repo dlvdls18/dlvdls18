@@ -1,7 +1,3 @@
-> [!IMPORTANT]
-> This account has been closed and abandoned. <br>
-> Refer to [creuserr](https://github.com/creuserr) instead.
-
 <br>
 <p align="center">
   <img width="300" alt="Status" src="https://github-stats-alpha.vercel.app/api?username=dlvdls18">
